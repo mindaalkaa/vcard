@@ -1,0 +1,24 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Сиренов;Томас;;;
+FN:Томас Сиренов
+ORG:
+ADR;TYPE=WORK:
+TITLE:QA Engineer / Content Creator
+TEL;TYPE=CELL:+79814052848
+TEL;TYPE=WORK:
+TEL;TYPE=HOME:
+TEL;TYPE=MSG:
+EMAIL;TYPE=WORK:
+URL;TYPE=Digital Business Card:
+URL:
+URL;TYPE=Telegram:https://t.me/thomas_sirenov
+URL;TYPE=WhatsApp:https://wa.me/79814052848
+URL;TYPE=Twitch:https://twitch.tv/mindaalkaa
+URL;TYPE=TikTok:https://tiktok.com/@mindaalkaa
+URL;TYPE=YouTube:https://youtube.com/@mindaalkaa
+URL;TYPE=Instagram:https://instagram.com/mlndalka
+KEY;TYPE=PGP;ENCODING=b:
+NOTE:
+UID:EnBizCard-100210052
+END:VCARD
