@@ -474,3 +474,10 @@ footer a {
   text-decoration: underline;
   color: inherit;
 }
+.actionBtn a svg * {
+  fill: #ffffff !important;
+}
+.actionBtn a img {
+  -webkit-filter: brightness(0) invert(1) !important;
+  filter: brightness(0) invert(1) !important;
+}
