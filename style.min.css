@@ -297,18 +297,14 @@ main {
   fill: #ffffff;
 }
 
-/* Иконки-картинки (например, Instagram) делаем белыми */
-.actionBtn a img {
-  display: block;
-  -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
-}
-
-/* Контурные инлайн-SVG (с атрибутом stroke) не закрашиваем сплошным белым */
-.actionBtn a svg[stroke] path,
-.actionBtn a svg[stroke] rect,
-.actionBtn a svg[stroke] circle {
-  fill: none;
+/*
+  Нижний ряд (Twitch, TikTok, YouTube, Instagram): у иконок там свои цвета —
+  fill в атрибутах и inline style (у Instagram fill:url(#градиент)).
+  !important нужен, чтобы перебить inline-стиль. Только для .secondary,
+  чтобы не закрасить контурные иконки верхнего ряда (у них inline fill:none).
+*/
+.actions.secondary a svg path {
+  fill: #ffffff !important;
 }
 
 .actionBtn p {
@@ -473,11 +469,4 @@ footer {
 footer a {
   text-decoration: underline;
   color: inherit;
-}
-.actionBtn a svg * {
-  fill: #ffffff !important;
-}
-.actionBtn a img {
-  -webkit-filter: brightness(0) invert(1) !important;
-  filter: brightness(0) invert(1) !important;
 }
