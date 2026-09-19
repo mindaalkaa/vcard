@@ -1,3 +1,14 @@
+/*
+  Масштабирование: все размеры в rem, поэтому достаточно менять размер шрифта корня.
+  16px — максимум; на низких или узких экранах всё пропорционально уменьшается,
+  чтобы визитка помещалась без прокрутки.
+*/
+html {
+  font-size: 16px;
+  font-size: min(16px, calc(100vh / 32), calc(100vw / 21));
+  font-size: min(16px, calc(100dvh / 32), calc(100vw / 21));
+}
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -147,7 +158,8 @@ header {
 }
 
 main {
-  padding: 1rem;
+  margin-top: 5.75rem;
+  padding: 1rem 1rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,8 +167,8 @@ main {
 }
 
 #profilePhoto {
-  width: 10rem;
-  height: 10rem;
+  width: 9rem;
+  height: 9rem;
   border-radius: 100%;
   box-sizing: border-box;
   pointer-events: none;
@@ -164,7 +176,7 @@ main {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-top: -6rem;
+  margin-top: -5.5rem;
   object-fit: cover;
   border: 4px solid #1e1e24;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -196,7 +208,7 @@ main {
 
 .bizname {
   font-size: .9rem;
-  margin: .5rem 0 0;
+  margin: 0;
   opacity: .8;
 }
 
@@ -244,7 +256,7 @@ main {
 
 .actions {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -319,20 +331,20 @@ main {
   font-weight: 500;
 }
 
+/* Соцсети: одним рядом в 4 колонки, чтобы не съедать высоту */
 .actions:last-of-type {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  max-width: 260px !important;
-  margin: 1.5rem auto 3rem !important;
-  gap: 1rem !important;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: .25rem;
+  gap: 0;
 }
 
 .actions:last-of-type .actionsC {
-  width: 100% !important;
+  width: 100%;
 }
 
 .secBtn {
-  padding: .5rem;
+  padding: .5rem .25rem;
 }
 
 .featured {
@@ -474,4 +486,39 @@ footer {
 footer a {
   text-decoration: underline;
   color: inherit;
+}
+
+/* Телефоны и узкие окна: карточка растягивается на весь экран, лишнее место делится между блоками */
+@media (max-width: 600px) {
+  html {
+    font-size: min(18px, calc(100vh / 32), calc(100vw / 21));
+    font-size: min(18px, calc(100dvh / 32), calc(100vw / 21));
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  #info {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .actions {
+    margin-top: auto;
+    padding-top: 1.25rem;
+  }
+
+  .actions:last-of-type {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: .25rem;
+  }
 }
