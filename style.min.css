@@ -297,8 +297,18 @@ main {
   fill: #ffffff;
 }
 
+/* Иконки-картинки (например, Instagram) делаем белыми */
 .actionBtn a img {
   display: block;
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+
+/* Контурные инлайн-SVG (с атрибутом stroke) не закрашиваем сплошным белым */
+.actionBtn a svg[stroke] path,
+.actionBtn a svg[stroke] rect,
+.actionBtn a svg[stroke] circle {
+  fill: none;
 }
 
 .actionBtn p {
