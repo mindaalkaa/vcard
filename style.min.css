@@ -307,6 +307,11 @@ main {
   fill: #ffffff !important;
 }
 
+/* Верхний ряд (Mobile, Telegram, WhatsApp): иконки контурные, заливки быть не должно */
+.actions:not(.secondary) a svg path {
+  fill: none !important;
+}
+
 .actionBtn p {
   margin: .5rem 0 0;
   font-size: .9rem;
